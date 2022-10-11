@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100%;
+  background: url(background.jpg);
+}
+
+/*Navigation*/
+nav {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  height: 70px;
+  width: 100%;
+  background: rgb(255, 255, 255, 0.5);
+  box-shadow: 0 0 1px rgb(0, 0, 0, 0.1);
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  margin: 0 24px;
+}
+
+.logo .icon-logo {
+  color: #fff;
+  font-size: 24px;
+  margin-right: 14px;
+  cursor: pointer;
+}
+
+.logo .logo-name {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+/*Sidebar*/
+nav .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  left: -100%;
+  height: 100%;
+  width: 240px;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgb(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/*Sidebar Logo*/
+.nav-sidebar {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+
+  padding: 20px 0;
+  height: 70px;
+  width: 100%;
+}
+
+nav.open .sidebar {
+  left: 0;
+}
+
+.logo-sidebar {
+  display: flex;
+  align-items: center;
+  margin: 0 24px;
+
+}
+
+.icon-logo-sidebar {
+  color: #333;
+  font-size: 24px;
+  margin-right: 14px;
+  cursor: pointer;
+}
+
+.logo-name-sidebar {
+  color: #333;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+/*Sidebar Content*/
+.sidebar .sidebar-content{
+  padding: 80px 24px 40px 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar-content .lists {
+  list-style: none;
+}
+
+.sidebar-content .list {
+  list-style: none;
+}
+
+.list .nav-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 12px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.lists .nav-link:hover {
+  background-color: rgb(118, 175, 148);
+}
+
+.lists .nav-link:hover .icon,
+.lists .nav-link:hover .link {
+  color: #fff;
+}
+
+.nav-link .icon {
+  margin-right: 16px;
+  margin-left: 10px;
+  font-size: 20px;
+  color: #707070;
+}
+
+.nav-link .link {
+  font-size: 16px;
+  color: #707070;
+  font-weight: 400;
+}
+
+/*Overlay*/
+.overlay {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 1000vh;
+  width: 200%;
+  opacity: 0;
+  background: rgb(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+nav.open ~ .overlay {
+  left: 240px;
+  opacity: 1;
+  pointer-events: auto;
+}
